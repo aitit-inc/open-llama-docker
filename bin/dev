@@ -1,0 +1,7 @@
+#!/bin/sh
+set -eux
+
+# Run right under the project root directory
+
+# docker compose -f docker-compose.yml --env-file .env "$@"
+docker compose -f docker-compose.yml "$@"
