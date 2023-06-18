@@ -6,6 +6,9 @@ services:
       dockerfile: Dockerfile
     image: open-llama
     container_name: open-llama-dev
+    command: jupyter lab --allow-root --ip="0.0.0.0" --port="8889"
+    ports:
+      - "8889:8889"
     deploy:
       resources:
         reservations:
@@ -16,3 +19,4 @@ services:
     volumes:
       - "./app:/app"
       - "./models:/models"
+      - "./notebooks:/workspace"
